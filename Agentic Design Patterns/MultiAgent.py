@@ -16,7 +16,7 @@ class Response(BaseModel):
 # Agent function
 def run_agent(agent_name: str, system_prompt: str, prompt: str) -> Response:
     response = client.models.generate_content(
-        model = "gemini-2.5-flash",
+        model = "gemini-2.5-flash-lite",
         contents = prompt, 
         config = {"system_instruction": f"You are {agent_name}. {system_prompt}", 
                 "response_mime_type": "application/json",
@@ -24,10 +24,6 @@ def run_agent(agent_name: str, system_prompt: str, prompt: str) -> Response:
         } 
     )
     return response.parsed
-
-manager_system_prompt = """You are a manager agent. 
-                        Your job is to identify which agent has to be executed, hotel or restaurant based on user query
-                        Once you have identified the agent, execute that agent."""
 
 # Define the system prompts for the agents
 hotel_system_prompt = """You are a Hotel Booking Agent. 
@@ -46,7 +42,14 @@ restaurant_system_prompt = """You are a Restaurant Booking Agent.
 initial_prompt = "Can you book me a table at an italian restaurant for 3 people tonight."
 print(f"Initial user request: {initial_prompt}")
 
-manager_output = run_agent("Manager Agent", manager_system_prompt, initial_prompt)
-print(manager_output.message)
+output = run_agent("Hotel Agent", hotel_system_prompt, initial_prompt)
 
 # Simulate a user interaction to change the prompt and handoff
+if output.handoff == "Restaurant Agent":
+    print("Handoff Triggered: Hotel to Restaurant")
+    output = run_agent("Restaurant Agent", restaurant_system_prompt, initial_prompt)
+elif output.handoff == "Hotel Agent":
+    print("Handoff Triggered: Restaurant to Hotel")
+    output = run_agent("Hotel Agent", hotel_system_prompt, initial_prompt)
+
+print(output.message)
