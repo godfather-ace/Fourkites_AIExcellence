@@ -54,5 +54,5 @@
 - https://ignacio-velasquez.notion.site/2-500-ChatGPT-Prompt-Templates-d9541e901b2b4e8f800e819bdc0256da?p=71ea210cdf6143cfaa18ebca39806d8e&pm=s →Prompt Template Examples
 - https://github.com/f/awesome-chatgpt-prompts → Prompt Template Examples
 - https://slidesgpt.com → Gen AI application for ppt building
-https://www.eraser.io/diagramgpt → Gen AI Application for workflow designing
+- https://www.eraser.io/diagramgpt → Gen AI Application for workflow designing
 
