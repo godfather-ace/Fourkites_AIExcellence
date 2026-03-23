@@ -1,5 +1,11 @@
 # Tools and Application Links - Gen AI, Prompt Engineering
 
+## Embeddings and Neural N/Ws
+- https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
+- https://projector.tensorflow.org/
+- https://playground.tensorflow.org/
+- https://teachablemachine.withgoogle.com/
+
 ## Text Analytics Tool 
 - https://voyant-tools.org/ → Automatically analyzes and generates insights based on the input text
 
