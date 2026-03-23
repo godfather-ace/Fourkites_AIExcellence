@@ -1,4 +1,4 @@
-### Tools and Application Links - Gen AI, Prompt Engineering
+# Tools and Application Links - Gen AI, Prompt Engineering
 
 ## Text Analytics Tool 
 - https://voyant-tools.org/ → Automatically analyzes and generates insights based on the input text
